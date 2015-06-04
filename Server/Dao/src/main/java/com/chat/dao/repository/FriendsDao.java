@@ -1,4 +1,4 @@
-package com.chat.dao.service;
+package com.chat.dao.repository;
 
 import org.springframework.stereotype.Service;
 
@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
  * Created by vlad
  * Date: 03.06.15_14:41
  */
-@Service
+
 public class FriendsDao implements FriendsDaoI {
 
 }

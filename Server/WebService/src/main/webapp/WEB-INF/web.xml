@@ -39,4 +39,8 @@
         <filter-name>corsFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+
+    <listener>
+        <listener-class>com.chat.dao.db.H2Memory</listener-class>
+    </listener>
 </web-app>

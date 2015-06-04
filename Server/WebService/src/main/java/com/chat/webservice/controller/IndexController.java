@@ -20,7 +20,7 @@ public class IndexController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView mainPage() {
-        return new ModelAndView("index.jsp");
+        return new ModelAndView("index");
     }
 
     @RequestMapping(value = "/points", method = RequestMethod.GET)

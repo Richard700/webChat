@@ -35,6 +35,4 @@ public class AuthServiceMock implements AuthServiceI {
         }
         throw new IllegalArgumentException("Login or password incorrect");
     }
-
-
 }

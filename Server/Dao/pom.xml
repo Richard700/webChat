@@ -47,6 +47,11 @@
             <artifactId>hibernate-entitymanager</artifactId>
             <version>${hb.manager}</version>
         </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>1.4.187</version>
+        </dependency>
 
         <!-- Spring 3 dependencies -->
         <dependency>
@@ -62,6 +67,11 @@
         <dependency>
             <groupId>joda-time</groupId>
             <artifactId>joda-time</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
         </dependency>
     </dependencies>
 

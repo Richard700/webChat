@@ -1,6 +1,6 @@
 package com.chat.webservice.businesslayer;
 
-import com.chat.dao.service.DaoFactoryI;
+import com.chat.dao.repository.DaoFactoryI;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**

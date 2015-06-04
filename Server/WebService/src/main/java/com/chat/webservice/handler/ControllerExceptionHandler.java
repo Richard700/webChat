@@ -1,6 +1,6 @@
 package com.chat.webservice.handler;
 
-import com.chat.webservice.exception.ServiceRuntimeException;
+import com.chat.webservice.exception.ServiceHttpException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -17,9 +17,9 @@ import javax.servlet.http.HttpServletResponse;
 @ControllerAdvice
 public class ControllerExceptionHandler {
 
-    @ExceptionHandler(ServiceRuntimeException.class)
+    @ExceptionHandler(ServiceHttpException.class)
     @ResponseBody
-    public ErrorResponseI handleError(HttpServletRequest req, HttpServletResponse res, ServiceRuntimeException e) {
+    public ErrorResponseI handleError(HttpServletRequest req, HttpServletResponse res, ServiceHttpException e) {
         res.setStatus(e.getCode());
         return new ErrorResponse(HttpStatus.valueOf(e.getCode()).value(), req.getRequestURI(), e.getMessage());
     }

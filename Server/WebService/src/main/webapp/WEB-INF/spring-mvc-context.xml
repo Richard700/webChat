@@ -12,14 +12,16 @@
             base-package="com.chat.webservice"/>
 
     <bean id="daoFactory"
-          class="com.chat.dao.service.DaoFactory">
+          class="com.chat.dao.repository.DaoFactory">
     </bean>
 
-    <bean id="serviceFacory"
+    <bean id="serviceFactory"
           class="com.chat.webservice.businesslayer.ServiceFactory"/>
 
     <bean id="authService"
           class="com.chat.webservice.businesslayer.AuthService"/>
+
+    <bean id="tokenGenerator" class="com.chat.webservice.utils.TokenGenerator"/>
 
     <context:annotation-config/>
     <mvc:annotation-driven/>

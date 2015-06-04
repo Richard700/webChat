@@ -1,4 +1,4 @@
-package com.chat.dao.service;
+package com.chat.dao.repository;
 
 /**
  * Created by vlad

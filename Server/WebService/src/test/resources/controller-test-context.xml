@@ -15,11 +15,11 @@
 
     <bean id="daoFactory" class="com.chat.dao.repository.DaoFactory"/>
 
+    <bean id="authController"
+          class="com.chat.webservice.controller.AuthController"/>
+
     <bean id="authService"
           class="com.chat.webservice.businesslayer.AuthServiceMock"/>
-
-    <bean id="tokenGenerator"
-          class="com.chat.webservice.utils.TokenGeneratorMock"/>
 
     <context:annotation-config/>
     <mvc:annotation-driven/>
