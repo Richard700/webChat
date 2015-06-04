@@ -39,26 +39,162 @@ public class AuthControllerTest {
     }
 
     @Test
-    public void testLoginRight() throws Exception {
+    public void testLogin() throws Exception {
         mockMvc.perform(
                 get("/auth/login")
-                        .param("login", "richard")
+                        .param("login", "login")
                         .param("pass", "1234")
         )
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(APPLICATION_JSON))
-                .andExpect(jsonPath("$.token", is("hello")));
+                .andExpect(jsonPath("$.token", is("token")));
     }
 
     @Test
     public void testLoginIncorrectLoginOrPass() throws Exception {
         mockMvc.perform(
                 get("/auth/login")
+                        .param("login", "login")
+                        .param("pass", "bad")
+        )
+                .andExpect(status().isUnauthorized())
+                .andExpect(content().contentType(APPLICATION_JSON))
+                .andExpect(jsonPath("$.message", is("Login or password incorrect")));
+    }
+
+    @Test
+    public void testLogout() throws Exception {
+        mockMvc.perform(
+                get("/auth/logout")
+                        .param("login", "login")
+                        .param("pass", "1234")
+        )
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(APPLICATION_JSON))
+                .andExpect(jsonPath("$.token", is("token")));
+    }
+
+    @Test
+    public void testLogoutIncorrectPass() throws Exception {
+        mockMvc.perform(
+                get("/auth/logout")
                         .param("login", "richard")
                         .param("pass", "bad")
         )
                 .andExpect(status().isUnauthorized())
                 .andExpect(content().contentType(APPLICATION_JSON))
                 .andExpect(jsonPath("$.message", is("Login or password incorrect")));
+    }
+
+    @Test
+    public void testAuthorization() throws Exception {
+        mockMvc.perform(
+                get("/auth/add")
+                        .param("firstName", "firstName")
+                        .param("secondName", "secondName")
+                        .param("login", "login")
+                        .param("pass", "1234")
+        )
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(APPLICATION_JSON))
+                .andExpect(jsonPath("$.token", is("token")));
+    }
+
+    @Test
+    public void testAuthorizationFirstNameIsEmpty() throws Exception {
+        mockMvc.perform(
+                get("/auth/add")
+                        .param("firstName", "")
+                        .param("secondName", "secondName")
+                        .param("login", "login")
+                        .param("pass", "1234")
+        )
+                .andExpect(status().isBadRequest())
+                .andExpect(content().contentType(APPLICATION_JSON))
+                .andExpect(jsonPath("$.message", is("First name is empty")));
+    }
+
+    @Test
+    public void testAuthorizationSecondNameIsEmpty() throws Exception {
+        mockMvc.perform(
+                get("/auth/add")
+                        .param("firstName", "firstName")
+                        .param("secondName", "")
+                        .param("login", "login")
+                        .param("pass", "1234")
+        )
+                .andExpect(status().isBadRequest())
+                .andExpect(content().contentType(APPLICATION_JSON))
+                .andExpect(jsonPath("$.message", is("Second name is empty")));
+    }
+
+    @Test
+    public void testAuthorizationLoginIsEmpty() throws Exception {
+        mockMvc.perform(
+                get("/auth/add")
+                        .param("firstName", "firstName")
+                        .param("secondName", "secondName")
+                        .param("login", "")
+                        .param("pass", "1234")
+        )
+                .andExpect(status().isBadRequest())
+                .andExpect(content().contentType(APPLICATION_JSON))
+                .andExpect(jsonPath("$.message", is("Login is empty")));
+    }
+
+    @Test
+    public void testAuthorizationLoginIsExists() throws Exception {
+        mockMvc.perform(
+                get("/auth/add")
+                        .param("firstName", "firstName")
+                        .param("secondName", "secondName")
+                        .param("login", "loginIsExists")
+                        .param("pass", "1234")
+        )
+                .andExpect(status().isUnauthorized())
+                .andExpect(content().contentType(APPLICATION_JSON))
+                .andExpect(jsonPath("$.message", is("Login has already")));
+    }
+
+    @Test
+    public void testAuthorizationLoginIsHasSpace() throws Exception {
+        mockMvc.perform(
+                get("/auth/add")
+                        .param("firstName", "firstName")
+                        .param("secondName", "secondName")
+                        .param("login", "login has space")
+                        .param("pass", "1234")
+        )
+                .andExpect(status().isBadRequest())
+                .andExpect(content().contentType(APPLICATION_JSON))
+                .andExpect(jsonPath("$.message", is("Login has spaces")));
+    }
+
+    @Test
+    public void testAuthorizationPassIsEmpty() throws Exception {
+        mockMvc.perform(
+                get("/auth/add")
+                        .param("firstName", "firstName")
+                        .param("secondName", "secondName")
+                        .param("login", "loginIsExists")
+                        .param("pass", "")
+        )
+                .andExpect(status().isBadRequest())
+                .andExpect(content().contentType(APPLICATION_JSON))
+                .andExpect(jsonPath("$.message", is("Password is empty")));
+    }
+
+    @Test
+    public void testAuthorizationPassIsHasSpace() throws Exception {
+        mockMvc.perform(
+                get("/auth/add")
+                        .param("firstName", "firstName")
+                        .param("secondName", "secondName")
+                        .param("login", "login")
+                        .param("pass", "pass has spaces")
+        )
+                .andExpect(status().isBadRequest())
+                .andExpect(content().contentType(APPLICATION_JSON))
+                .andExpect(jsonPath("$.message", is("Password has spaces")));
     }
 }
