@@ -13,4 +13,6 @@ public interface AuthServiceI {
     UserTokenI logout(String login, String pass);
 
     UserTokenI authorization(String firstName, String secondName, String login, String pass);
+
+    boolean isValidToken(String token);
 }

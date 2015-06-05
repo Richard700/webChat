@@ -11,12 +11,15 @@
     <context:component-scan
             base-package="com.chat.dao"/>
 
-    <bean id="userDao" class="com.chat.dao.UserDaoMock"/>
+    <bean id="authService"
+          class="com.chat.webservice.businesslayer.AuthService"/>
+
+    <bean id="friendsService"
+          class="com.chat.webservice.businesslayer.FriendsService"/>
 
     <bean id="daoFactory" class="com.chat.dao.repository.DaoFactory"/>
 
-    <bean id="authService"
-          class="com.chat.webservice.businesslayer.AuthServiceMock"/>
+    <bean id="userDao" class="com.chat.dao.UserDaoMock"/>
 
     <bean id="tokenGenerator"
           class="com.chat.webservice.utils.TokenGeneratorMock"/>

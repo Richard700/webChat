@@ -25,7 +25,6 @@ public class AuthService implements AuthServiceI {
     public UserTokenI login(String login, String pass) {
         UserDaoI userDao = daoFactory.getUserDao();
         UserI user = getAuthUser(userDao, login, pass);
-
         String token = user.getToken();
         return new UserToken(token);
     }
@@ -61,5 +60,12 @@ public class AuthService implements AuthServiceI {
         User newUser = new User(firstName, secondName, login, pass, token);
         daoFactory.getUserDao().save(newUser);
         return new UserToken(token);
+    }
+
+    @Override
+    public boolean isValidToken(String token) {
+        UserDaoI userDao = daoFactory.getUserDao();
+        UserI user = userDao.findByToken(token);
+        return user != null;
     }
 }

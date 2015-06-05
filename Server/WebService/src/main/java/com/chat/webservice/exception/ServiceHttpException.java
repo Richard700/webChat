@@ -1,19 +1,25 @@
 package com.chat.webservice.exception;
 
+import org.springframework.http.HttpStatus;
+
 /**
  * Created by vlad
  * Date: 04.06.15_10:38
  */
-public class ServiceHttpException extends Exception {
+public class ServiceHttpException extends IllegalArgumentException {
 
-    private int code;
+    private HttpStatus httpStatus;
 
-    public ServiceHttpException(String message, int code) {
+    public ServiceHttpException(String message, HttpStatus httpStatus) {
         super(message);
-        this.code = code;
+        this.httpStatus = httpStatus;
+    }
+
+    public HttpStatus getHttpStatus() {
+        return httpStatus;
     }
 
     public int getCode() {
-        return code;
+        return httpStatus.value();
     }
 }

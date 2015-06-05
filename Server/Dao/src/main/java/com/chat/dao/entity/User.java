@@ -2,13 +2,15 @@ package com.chat.dao.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 
 /**
  * Created by vlad
  * Date: 04.06.15_11:28
  */
-@Entity(name = "user")
+@Entity
+@Table(name = "chat_user")
 public class User implements UserI, Serializable {
 
     @Id
@@ -25,6 +27,14 @@ public class User implements UserI, Serializable {
     private String password;
     @Column(name = "token")
     private String token;
+
+    @ManyToMany
+    @JoinTable(
+            name = "user_to_user",
+            joinColumns = {@JoinColumn(name = "user_from", referencedColumnName = "id")},
+            inverseJoinColumns = {@JoinColumn(name = "user_to", referencedColumnName = "id")}
+    )
+    private List<User> friends;
 
     public User() {
     }
@@ -52,6 +62,14 @@ public class User implements UserI, Serializable {
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setFriends(List<User> friends) {
+        this.friends = friends;
     }
 
     @Override
@@ -94,6 +112,10 @@ public class User implements UserI, Serializable {
 
     public void setToken(String token) {
         this.token = token;
+    }
+
+    public List<User> getFriends() {
+        return friends;
     }
 
     @Override

@@ -21,6 +21,9 @@
     <bean id="authService"
           class="com.chat.webservice.businesslayer.AuthService"/>
 
+    <bean id="friendsService"
+          class="com.chat.webservice.businesslayer.FriendsService"/>
+
     <bean id="tokenGenerator" class="com.chat.webservice.utils.TokenGenerator"/>
 
     <context:annotation-config/>

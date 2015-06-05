@@ -1,5 +1,7 @@
 package com.chat.dao.entity;
 
+import java.util.List;
+
 /**
  * Created by vlad
  * Date: 04.06.15_11:29
@@ -17,4 +19,6 @@ public interface UserI {
     String getSecondName();
 
     String getLogin();
+
+    List<User> getFriends();
 }

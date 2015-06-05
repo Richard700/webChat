@@ -13,6 +13,10 @@ public class ErrorResponse implements ErrorResponseI {
     public ErrorResponse() {
     }
 
+    public ErrorResponse(String message) {
+        this.message = message;
+    }
+
     public ErrorResponse(int code, String requestUrl, String message) {
         this.code = code;
         this.requestUrl = requestUrl;

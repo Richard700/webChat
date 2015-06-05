@@ -14,4 +14,6 @@ public interface UserDaoI extends JpaRepository<User, Long> {
 
     UserI findByLogin(String login);
 
+    UserI findByToken(String token);
+
 }

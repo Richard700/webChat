@@ -21,6 +21,9 @@
     <bean id="authService"
           class="com.chat.webservice.businesslayer.AuthServiceMock"/>
 
+    <bean id="friendsService"
+          class="com.chat.webservice.businesslayer.FriendsServiceMock"/>
+
     <context:annotation-config/>
     <mvc:annotation-driven/>
 </beans>

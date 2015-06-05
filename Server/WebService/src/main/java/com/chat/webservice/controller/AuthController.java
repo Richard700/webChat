@@ -33,7 +33,7 @@ public class AuthController {
         try {
             return service.login(login, pass);
         } catch (Exception e) {
-            throw new ServiceHttpException(e.getMessage(), HttpStatus.UNAUTHORIZED.value());
+            throw new ServiceHttpException(e.getMessage(), HttpStatus.UNAUTHORIZED);
         }
     }
 
@@ -46,7 +46,7 @@ public class AuthController {
         try {
             return service.logout(login, pass);
         } catch (Exception e) {
-            throw new ServiceHttpException(e.getMessage(), HttpStatus.UNAUTHORIZED.value());
+            throw new ServiceHttpException(e.getMessage(), HttpStatus.UNAUTHORIZED);
         }
     }
 
@@ -63,7 +63,7 @@ public class AuthController {
         try {
             return service.authorization(firstName, secondName, login, pass);
         } catch (Exception e) {
-            throw new ServiceHttpException(e.getMessage(), HttpStatus.UNAUTHORIZED.value());
+            throw new ServiceHttpException(e.getMessage(), HttpStatus.UNAUTHORIZED);
         }
     }
 

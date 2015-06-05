@@ -40,7 +40,12 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
-    <listener>
-        <listener-class>com.chat.dao.db.H2Memory</listener-class>
-    </listener>
+    <filter>
+        <filter-name>authFiter</filter-name>
+        <filter-class>com.chat.webservice.filter.AuthenticationFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>authFiter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 </web-app>

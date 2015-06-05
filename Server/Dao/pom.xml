@@ -13,9 +13,9 @@
     <packaging>jar</packaging>
 
     <properties>
-        <dbcp.version>1.2.2</dbcp.version>
-        <hibernate.version>4.2.11.Final</hibernate.version>
-        <hb.manager>4.2.5.Final</hb.manager>
+        <dbcp.version>1.4</dbcp.version>
+        <hibernate.version>4.3.10.Final</hibernate.version>
+        <hb.manager>4.3.10.Final</hb.manager>
     </properties>
 
     <dependencies>

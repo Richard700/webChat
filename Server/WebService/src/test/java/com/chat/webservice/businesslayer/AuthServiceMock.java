@@ -35,4 +35,12 @@ public class AuthServiceMock implements AuthServiceI {
         }
         throw new IllegalArgumentException("Login or password incorrect");
     }
+
+    @Override
+    public boolean isValidToken(String token) {
+        if ("validToken".equals(token)) {
+            return true;
+        }
+        return false;
+    }
 }

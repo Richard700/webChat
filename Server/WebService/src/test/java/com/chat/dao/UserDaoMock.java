@@ -12,13 +12,17 @@ public class UserDaoMock extends JpaRepositoryMock<User, Long> implements UserDa
 
     @Override
     public UserI findByLogin(String login) {
-        if ("login".equals(login)) {
-            return new User("firstName", "secondName", "login", "1234", "token");
+        if ("loginIsExists".equals(login)) {
+            return new User("firstName", "secondName", "loginIsExists", "1234", "token");
         }
         return null;
     }
 
-    public UserI save(UserI updateUser) {
-        return updateUser;
+    @Override
+    public UserI findByToken(String token) {
+        if ("validToken".equals(token)) {
+            return new User("firstName", "secondName", "loginIsExists", "1234", "token");
+        }
+        return null;
     }
 }

@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import static org.junit.Assert.*;
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:service-test-context.xml")
 public class AuthServiceTest {
@@ -18,7 +20,7 @@ public class AuthServiceTest {
     @Test
     public void testAuthorization() throws Exception {
         UserTokenI userToken = service.authorization("firstName", "secondName", "login", "1234");
-        Assert.assertEquals("token", userToken.getToken());
+        assertEquals("token", userToken.getToken());
 
     }
 
@@ -29,8 +31,8 @@ public class AuthServiceTest {
 
     @Test
     public void testLogin() throws Exception {
-        UserTokenI userToken = service.login("login", "1234");
-        Assert.assertEquals("token", userToken.getToken());
+        UserTokenI userToken = service.login("loginIsExists", "1234");
+        assertEquals("token", userToken.getToken());
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -45,8 +47,8 @@ public class AuthServiceTest {
 
     @Test
     public void testLogout() throws Exception {
-        UserTokenI userToken = service.logout("login", "1234");
-        Assert.assertEquals("token", userToken.getToken());
+        UserTokenI userToken = service.logout("loginIsExists", "1234");
+        assertEquals("token", userToken.getToken());
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -59,4 +61,15 @@ public class AuthServiceTest {
         service.logout("login", "incorrect");
     }
 
+    @Test
+    public void testIsValidToken() throws Exception {
+        boolean valid = service.isValidToken("validToken");
+        assertTrue(valid);
+    }
+
+    @Test
+    public void testIsNotValidToken() throws Exception {
+        boolean valid = service.isValidToken("notValidToken");
+        assertFalse(valid);
+    }
 }
