@@ -12,11 +12,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Created by vlad
- * Date: 03.06.15_14:45
- */
-
 @Controller
 @RequestMapping(value = "/auth")
 public class AuthController {

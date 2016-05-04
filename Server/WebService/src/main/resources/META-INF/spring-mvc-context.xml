@@ -11,9 +11,9 @@
     <context:component-scan
             base-package="com.chat.webservice"/>
 
-    <bean id="daoFactory"
-          class="com.chat.dao.repository.DaoFactory">
-    </bean>
+    <!--<bean id="daoFactory"-->
+          <!--class="com.chat.dao.repository.DaoFactoryImpl">-->
+    <!--</bean>-->
 
     <bean id="serviceFactory"
           class="com.chat.webservice.businesslayer.ServiceFactory"/>

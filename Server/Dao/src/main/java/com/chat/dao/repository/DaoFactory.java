@@ -1,30 +1,9 @@
 package com.chat.dao.repository;
 
-import org.springframework.beans.factory.annotation.Autowired;
+public interface DaoFactory {
 
-/**
- * Created by vlad
- * Date: 03.06.15_13:53
- */
+    public UserDao getUserDao();
 
-public class DaoFactory implements DaoFactoryI {
+//    public FriendsDao getFriends();
 
-    @Autowired
-    private UserDaoI auth;
-//    @Autowired
-//    private FriendsDaoI friends;
-
-    public UserDaoI getUserDao() {
-        return auth;
-    }
-
-//    @Override
-//    public FriendsDaoI getFriends() {
-//        return null;
-//    }
-
-
-    public void setAuth(UserDaoI auth) {
-        this.auth = auth;
-    }
 }

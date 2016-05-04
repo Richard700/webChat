@@ -15,7 +15,7 @@
         </servlet-class>
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>WEB-INF/spring-mvc-context.xml</param-value>
+            <param-value>META-INF/spring-mvc-context.xml</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
@@ -32,8 +32,7 @@
 
     <filter>
         <filter-name>corsFilter</filter-name>
-        <filter-class>com.chat.webservice.filter.CORSFilter
-        </filter-class>
+        <filter-class>com.chat.webservice.filter.CORSFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>corsFilter</filter-name>

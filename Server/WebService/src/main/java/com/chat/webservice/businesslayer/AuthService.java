@@ -2,28 +2,26 @@ package com.chat.webservice.businesslayer;
 
 import com.chat.dao.entity.User;
 import com.chat.dao.entity.UserI;
-import com.chat.dao.repository.DaoFactoryI;
-import com.chat.dao.repository.UserDaoI;
+import com.chat.dao.repository.DaoFactory;
+import com.chat.dao.repository.UserDao;
 import com.chat.webservice.entity.UserToken;
 import com.chat.webservice.entity.UserTokenI;
 import com.chat.webservice.utils.TokenGeneratorI;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-/**
- * Created by vlad
- * Date: 03.06.15_14:49
- */
+@Component
 public class AuthService implements AuthServiceI {
 
     @Autowired
-    private DaoFactoryI daoFactory;
+    private DaoFactory daoFactory;
 
     @Autowired
     private TokenGeneratorI tokenGenerator;
 
     @Override
     public UserTokenI login(String login, String pass) {
-        UserDaoI userDao = daoFactory.getUserDao();
+        UserDao userDao = daoFactory.getUserDao();
         UserI user = getAuthUser(userDao, login, pass);
         String token = user.getToken();
         return new UserToken(token);
@@ -31,7 +29,7 @@ public class AuthService implements AuthServiceI {
 
     @Override
     public UserTokenI logout(String login, String pass) {
-        UserDaoI userDao = daoFactory.getUserDao();
+        UserDao userDao = daoFactory.getUserDao();
         UserI user = getAuthUser(userDao, login, pass);
 
         String token = tokenGenerator.generate();
@@ -41,7 +39,7 @@ public class AuthService implements AuthServiceI {
         return new UserToken(token);
     }
 
-    private UserI getAuthUser(UserDaoI userDao, String login, String pass) {
+    private UserI getAuthUser(UserDao userDao, String login, String pass) {
         UserI user = userDao.findByLogin(login);
         if (user == null || !pass.equals(user.getPassword())) {
             throw new IllegalArgumentException("Login or password incorrect");
@@ -51,7 +49,7 @@ public class AuthService implements AuthServiceI {
 
     @Override
     public UserTokenI authorization(String firstName, String secondName, String login, String pass) {
-        UserDaoI userDao = daoFactory.getUserDao();
+        UserDao userDao = daoFactory.getUserDao();
         UserI user = userDao.findByLogin(login);
         if (user != null) {
             throw new IllegalArgumentException("Login has already");
@@ -64,7 +62,7 @@ public class AuthService implements AuthServiceI {
 
     @Override
     public boolean isValidToken(String token) {
-        UserDaoI userDao = daoFactory.getUserDao();
+        UserDao userDao = daoFactory.getUserDao();
         UserI user = userDao.findByToken(token);
         return user != null;
     }

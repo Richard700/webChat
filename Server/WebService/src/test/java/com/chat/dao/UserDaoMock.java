@@ -2,13 +2,13 @@ package com.chat.dao;
 
 import com.chat.dao.entity.User;
 import com.chat.dao.entity.UserI;
-import com.chat.dao.repository.UserDaoI;
+import com.chat.dao.repository.UserDao;
 
 /**
  * Created by vlad
  * Date: 04.06.15_11:43
  */
-public class UserDaoMock extends JpaRepositoryMock<User, Long> implements UserDaoI {
+public class UserDaoMock extends JpaRepositoryMock<User, Long> implements UserDao {
 
     @Override
     public UserI findByLogin(String login) {

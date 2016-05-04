@@ -14,8 +14,8 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
 
     <jpa:repositories base-package="com.chat.dao.repository"/>
 
-    <bean id="serviceDao"
-          class="com.chat.dao.repository.DaoFactory"/>
+    <!--<bean id="serviceDao"-->
+    <!--class="com.chat.dao.repository.DaoFactoryImpl"/>-->
 
     <bean id="transactionManager"
           class="org.springframework.orm.jpa.JpaTransactionManager">
