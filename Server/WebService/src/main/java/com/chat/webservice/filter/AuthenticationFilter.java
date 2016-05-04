@@ -18,12 +18,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * Created by vlad
- * Date: 05.06.15_13:41
- */
-
-@Component
 public class AuthenticationFilter extends RequestContextFilter {
 
     public static final String URL_IGNORE = "/auth";

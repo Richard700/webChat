@@ -39,11 +39,11 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
         <jdbc:script location="classpath:setupDatabase.sql"/>
     </jdbc:embedded-database>
 
-    <bean id="dataSource"
-          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="org.h2.Driver"/>
-        <property name="url" value="jdbc:h2:mem:CHAT_SCHEMA;DB_CLOSE_DELAY=-1"/>
-    </bean>
+    <!--<bean id="dataSource"-->
+          <!--class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
+        <!--<property name="driverClassName" value="org.h2.Driver"/>-->
+        <!--<property name="url" value="jdbc:h2:mem:CHAT_SCHEMA;DB_CLOSE_DELAY=-1"/>-->
+    <!--</bean>-->
 
     <bean id="jpaAdaptor"
           class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
