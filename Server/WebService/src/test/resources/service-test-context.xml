@@ -17,7 +17,7 @@
     <bean id="friendsService"
           class="com.chat.webservice.businesslayer.FriendsService"/>
 
-    <bean id="daoFactory" class="com.chat.dao.repository.DaoFactory"/>
+    <bean id="daoFactory" class="com.chat.dao.RepositoryFactory"/>
 
     <bean id="userDao" class="com.chat.dao.UserDaoMock"/>
 

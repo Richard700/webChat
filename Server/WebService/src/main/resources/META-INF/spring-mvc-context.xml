@@ -1,10 +1,8 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:mvc="http://www.springframework.org/schema/mvc"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
-        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
-        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
     <import resource="classpath:dao-context.xml"/>
 
@@ -12,7 +10,7 @@
             base-package="com.chat.webservice"/>
 
     <!--<bean id="daoFactory"-->
-          <!--class="com.chat.dao.repository.DaoFactoryImpl">-->
+    <!--class="RepositoryFactoryImploryImpl">-->
     <!--</bean>-->
 
     <bean id="serviceFactory"
@@ -25,12 +23,4 @@
           class="com.chat.webservice.businesslayer.FriendsService"/>
 
     <bean id="tokenGenerator" class="com.chat.webservice.utils.TokenGenerator"/>
-
-    <context:annotation-config/>
-    <mvc:annotation-driven/>
-
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/"/>
-        <property name="suffix" value=".jsp"/>
-    </bean>
 </beans>

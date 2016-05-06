@@ -23,6 +23,8 @@
 
     <modules>
         <module>Dao</module>
+        <module>Service</module>
+        <module>Security</module>
         <module>WebService</module>
     </modules>
     <properties>
@@ -68,21 +70,21 @@
     <dependencyManagement>
         <dependencies>
             <!--<dependency>-->
-                <!--<groupId>org.springframework</groupId>-->
-                <!--<artifactId>spring-webmvc</artifactId>-->
-                <!--<version>${spring.version}</version>-->
+            <!--<groupId>org.springframework</groupId>-->
+            <!--<artifactId>spring-webmvc</artifactId>-->
+            <!--<version>${spring.version}</version>-->
             <!--</dependency>-->
 
             <!--<dependency>-->
-                <!--<groupId>org.springframework</groupId>-->
-                <!--<artifactId>spring-context-support</artifactId>-->
-                <!--<version>${spring.version}</version>-->
+            <!--<groupId>org.springframework</groupId>-->
+            <!--<artifactId>spring-context-support</artifactId>-->
+            <!--<version>${spring.version}</version>-->
             <!--</dependency>-->
 
             <!--<dependency>-->
-                <!--<groupId>org.springframework</groupId>-->
-                <!--<artifactId>spring-context</artifactId>-->
-                <!--<version>${spring.version}</version>-->
+            <!--<groupId>org.springframework</groupId>-->
+            <!--<artifactId>spring-context</artifactId>-->
+            <!--<version>${spring.version}</version>-->
             <!--</dependency>-->
 
             <dependency>
@@ -106,62 +108,62 @@
 
             <!-- Logging dependencies -->
             <!--<dependency>-->
-                <!--<groupId>ch.qos.logback</groupId>-->
-                <!--<artifactId>logback-classic</artifactId>-->
-                <!--<version>${logback.version}</version>-->
+            <!--<groupId>ch.qos.logback</groupId>-->
+            <!--<artifactId>logback-classic</artifactId>-->
+            <!--<version>${logback.version}</version>-->
             <!--</dependency>-->
 
             <!--<dependency>-->
-                <!--<groupId>javax.servlet.jsp</groupId>-->
-                <!--<artifactId>jsp-api</artifactId>-->
-                <!--<version>2.1</version>-->
-                <!--<scope>provided</scope>-->
+            <!--<groupId>javax.servlet.jsp</groupId>-->
+            <!--<artifactId>jsp-api</artifactId>-->
+            <!--<version>2.1</version>-->
+            <!--<scope>provided</scope>-->
             <!--</dependency>-->
 
             <!--<dependency>-->
-                <!--<groupId>org.springframework</groupId>-->
-                <!--<artifactId>spring-core</artifactId>-->
-                <!--<version>${spring.version}</version>-->
+            <!--<groupId>org.springframework</groupId>-->
+            <!--<artifactId>spring-core</artifactId>-->
+            <!--<version>${spring.version}</version>-->
             <!--</dependency>-->
             <!--<dependency>-->
-                <!--<groupId>org.springframework.data</groupId>-->
-                <!--<artifactId>spring-data-jpa</artifactId>-->
-                <!--<version>${spring-data-jpa}</version>-->
+            <!--<groupId>org.springframework.data</groupId>-->
+            <!--<artifactId>spring-data-jpa</artifactId>-->
+            <!--<version>${spring-data-jpa}</version>-->
             <!--</dependency>-->
             <!--<dependency>-->
-                <!--<groupId>taglibs</groupId>-->
-                <!--<artifactId>standard</artifactId>-->
-                <!--<version>1.1.2</version>-->
-                <!--<scope>compile</scope>-->
+            <!--<groupId>taglibs</groupId>-->
+            <!--<artifactId>standard</artifactId>-->
+            <!--<version>1.1.2</version>-->
+            <!--<scope>compile</scope>-->
             <!--</dependency>-->
             <!--<dependency>-->
-                <!--<groupId>jstl</groupId>-->
-                <!--<artifactId>jstl</artifactId>-->
-                <!--<version>1.2</version>-->
-                <!--<scope>compile</scope>-->
+            <!--<groupId>jstl</groupId>-->
+            <!--<artifactId>jstl</artifactId>-->
+            <!--<version>1.2</version>-->
+            <!--<scope>compile</scope>-->
             <!--</dependency>-->
             <!--<dependency>-->
-                <!--<groupId>org.springframework</groupId>-->
-                <!--<artifactId>spring-framework-bom</artifactId>-->
-                <!--<version>${spring.version}</version>-->
-                <!--<type>pom</type>-->
-                <!--<scope>import</scope>-->
+            <!--<groupId>org.springframework</groupId>-->
+            <!--<artifactId>spring-framework-bom</artifactId>-->
+            <!--<version>${spring.version}</version>-->
+            <!--<type>pom</type>-->
+            <!--<scope>import</scope>-->
             <!--</dependency>-->
 
             <!--<dependency>-->
-                <!--<groupId>joda-time</groupId>-->
-                <!--<artifactId>joda-time</artifactId>-->
-                <!--<version>2.7</version>-->
+            <!--<groupId>joda-time</groupId>-->
+            <!--<artifactId>joda-time</artifactId>-->
+            <!--<version>2.7</version>-->
             <!--</dependency>-->
             <!--<dependency>-->
-                <!--<groupId>org.codehaus.jackson</groupId>-->
-                <!--<artifactId>jackson-core-asl</artifactId>-->
-                <!--<version>1.9.12</version>-->
+            <!--<groupId>org.codehaus.jackson</groupId>-->
+            <!--<artifactId>jackson-core-asl</artifactId>-->
+            <!--<version>1.9.12</version>-->
             <!--</dependency>-->
             <!--<dependency>-->
-                <!--<groupId>junit</groupId>-->
-                <!--<artifactId>junit</artifactId>-->
-                <!--<version>4.11</version>-->
+            <!--<groupId>junit</groupId>-->
+            <!--<artifactId>junit</artifactId>-->
+            <!--<version>4.11</version>-->
             <!--</dependency>-->
         </dependencies>
 

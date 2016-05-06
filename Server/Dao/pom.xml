@@ -9,9 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>Dao</artifactId>
+    <artifactId>dao</artifactId>
     <packaging>jar</packaging>
-    <name>Dao</name>
+    <name>dao</name>
 
     <properties>
         <dbcp.version>1.4</dbcp.version>

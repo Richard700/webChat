@@ -1,6 +1,6 @@
 package com.chat.webservice.businesslayer;
 
-import com.chat.dao.repository.DaoFactory;
+import com.chat.dao.RepositoryFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
@@ -10,6 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class ServiceFactory implements ServiceFactoryI {
 
     @Autowired
-    private DaoFactory daoFactory;
+    private RepositoryFactory repositoryFactory;
 
 }

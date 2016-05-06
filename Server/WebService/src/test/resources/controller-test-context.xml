@@ -13,7 +13,7 @@
 
     <bean id="userDao" class="com.chat.dao.UserDaoMock"/>
 
-    <bean id="daoFactory" class="com.chat.dao.repository.DaoFactory"/>
+    <bean id="daoFactory" class="com.chat.dao.RepositoryFactory"/>
 
     <bean id="authController"
           class="com.chat.webservice.controller.AuthController"/>

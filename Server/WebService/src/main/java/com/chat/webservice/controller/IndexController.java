@@ -16,7 +16,7 @@ public class IndexController {
     private RequestMappingHandlerMapping requestMappingHandlerMapping;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public ModelAndView mainPage() {
+    public ModelAndView root() {
         return new ModelAndView("index");
     }
 

@@ -26,7 +26,8 @@ public class AuthController {
         checkIsEmpty(login, "Login");
         checkIsEmpty(pass, "Password");
         try {
-            return service.login(login, pass);
+//            return service.login(login, pass);
+            return null;
         } catch (Exception e) {
             throw new ServiceHttpException(e.getMessage(), HttpStatus.UNAUTHORIZED);
         }
@@ -39,7 +40,8 @@ public class AuthController {
         checkIsEmpty(login, "Login");
         checkIsEmpty(pass, "Password");
         try {
-            return service.logout(login, pass);
+//            return service.logout(login, pass);
+            return null;
         } catch (Exception e) {
             throw new ServiceHttpException(e.getMessage(), HttpStatus.UNAUTHORIZED);
         }
@@ -56,7 +58,8 @@ public class AuthController {
         checkIsEmptyOrHasSpace(login, "Login");
         checkIsEmptyOrHasSpace(pass, "Password");
         try {
-            return service.authorization(firstName, secondName, login, pass);
+//            return service.authorization(firstName, secondName, login, pass);
+            return null;
         } catch (Exception e) {
             throw new ServiceHttpException(e.getMessage(), HttpStatus.UNAUTHORIZED);
         }
